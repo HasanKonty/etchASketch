@@ -6,8 +6,14 @@ html, body{
 body{
     background-color:#7d7d7d7d;
     display: flex;
+    flex-direction:column;
     height: 100vh;
 
+}
+
+.btn{
+    width :fit-content;
+    align-self: center;
 }
 /* make the divs as columns that stack next to each other  */
 .sketch-screen{

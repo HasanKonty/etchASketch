@@ -26,7 +26,7 @@ function makeGrids(size) {
 
 makeGrids(16);
 
-//make a function to color squares when hovered
+//color squares when hovered
 
 //select screen 
 const gridContainer = document.querySelector(".sketch-screen");
@@ -39,3 +39,5 @@ gridContainer.addEventListener("mouseover", (e) => {
         e.target.style.backgroundColor = "black";
     }
 })
+
+//make the button prompt a gird size " not done yet"
