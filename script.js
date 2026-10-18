@@ -25,3 +25,17 @@ function makeGrids(size) {
 }
 
 makeGrids(16);
+
+//make a function to color squares when hovered
+
+//select screen 
+const gridContainer = document.querySelector(".sketch-screen");
+
+//listen for mouseover
+gridContainer.addEventListener("mouseover", (e) => {
+
+    //turns cell black if touched
+    if(e.target.classList.contains("row")) {
+        e.target.style.backgroundColor = "black";
+    }
+})
