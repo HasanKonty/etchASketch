@@ -7,7 +7,6 @@ function makeGrids(size){
             let row = document.createElement("div");
             row.classList.add("row");
             row.style.border = "2px solid black";
-            row.innerText = (i * size) + j;
             column.appendChild(row);
         }
         screen.appendChild(column);
