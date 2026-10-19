@@ -32,16 +32,14 @@ function makeGrids(size) {
 
 
 
-
-
 // make button prompt user input and make user input  change size
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", () => {
     const userInput = prompt("enter grid size 1-100");
 //make sure input is not empty
     if (userInput === null) return;
-//make sure size is between 1 and 100 
-    const n = Number(userInput);
+//make sure size is a number between 1 and 100
+    const n = Number(userInput);   
     if (!Number.isInteger(n) || n < 1 || n > 100) {
         alert("input up to 100");
         return;
@@ -52,18 +50,12 @@ btn.addEventListener("click", () => {
     makeGrids(n);
 
 })
-
+// make default grid size 16x16
 makeGrids(16);
 
 
 
-
-
-
 //color squares when hovered
-
-//select screen 
-//const gridContainer = document.querySelector(".sketch-screen");
 
 //listen for mouseover
 screen.addEventListener("mouseover", (e) => {
