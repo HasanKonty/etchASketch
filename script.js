@@ -17,7 +17,7 @@ function makeGrids(size) {
         column.classList.add("column");
  //make a loop inside each column
         for (let j = 1; j <= size; j++) {
- //make div each loop turn
+ //make cell inside column each loop turn
             let row = document.createElement("div");
  //add inline css to override the style.css
             row.classList.add("row");
@@ -32,7 +32,7 @@ function makeGrids(size) {
 
 
 
-// make button prompt user input and make user input  change size
+// make button to prompt user input and make user input  change size
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", () => {
     const userInput = prompt("enter grid size 1-100");
@@ -44,12 +44,11 @@ btn.addEventListener("click", () => {
         alert("input up to 100");
         return;
     }
-
     size = n;
-
     makeGrids(n);
 
 })
+
 // make default grid size 16x16
 makeGrids(16);
 
@@ -66,14 +65,17 @@ function random() {
 //listen for mouseover
 screen.addEventListener("mouseover", (e) => {
 
-//turns cell red if touched
+//turns cell random color if touched
+
+
+//check if the hover is over a cell 
     if (e.target.classList.contains("row") && 
 //check if the cell is colored and skip if colored    
          !e.target.style.backgroundColor) {
 //give a random color            
         e.target.style.backgroundColor = random();
     }
-//    
+// increase color intensity with every hover   
     if (+e.target.style.opacity <= 0.9) {
         e.target.style.opacity = +e.target.style.opacity + 0.1;
     }
