@@ -21,7 +21,7 @@ function makeGrids(size) {
             let row = document.createElement("div");
  //add inline css to override the style.css
             row.classList.add("row");
-            row.style.border = "2px solid black";
+            row.style.border = "1px dotted grey";
 //append the row cells to the column
             column.appendChild(row);
         }
@@ -56,12 +56,25 @@ makeGrids(16);
 
 
 //color squares when hovered
-
+// make function to create random color 
+function random() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g} , ${b})`;
+}
 //listen for mouseover
 screen.addEventListener("mouseover", (e) => {
 
-//turns cell black if touched
-    if (e.target.classList.contains("row")) {
-        e.target.style.backgroundColor = "red";
+//turns cell red if touched
+    if (e.target.classList.contains("row") && 
+//check if the cell is colored and skip if colored    
+         !e.target.style.backgroundColor) {
+//give a random color            
+        e.target.style.backgroundColor = random();
+    }
+//    
+    if (+e.target.style.opacity <= 0.9) {
+        e.target.style.opacity = +e.target.style.opacity + 0.1;
     }
 })
